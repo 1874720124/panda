@@ -1,13 +1,6 @@
 <template>
   <div id="app" class="gome-app">
-    <div class="gome-header">
-      <mt-header title="国美商城">
-      <router-link to="/" slot="left">
-        <mt-button icon="back">返回</mt-button>
-      </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
-    </mt-header>
-    </div>
+    <GomeHeader></GomeHeader>
     <div class="gome-main">
       <router-view />
     </div>
@@ -18,8 +11,12 @@
 </template>
 
 <script>
+import GomeHeader from '@/components/GomeHeader'
 export default {
   created () {
+  },
+  components: {
+    GomeHeader
   }
 }
 </script>
@@ -136,6 +133,7 @@ body,
   }
   .gome-main{
     flex: 1;
+    height: 100%;
   }
 }
 @font-face {

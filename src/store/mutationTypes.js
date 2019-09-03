@@ -1,0 +1,6 @@
+export const ADD_TO_CAR = 'addToCar'
+export const DECREAMENT_BY_ID = 'decreament'
+export const INCREAMENT = 'increament'
+export const TOGGLE_CKECKED = 'toggleChecked'
+export const ALL_CHECK_CHANGE = 'allCheckChange'
+export const LOGIN = 'login'

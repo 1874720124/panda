@@ -4,7 +4,7 @@
     <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class = "swiper-slide" 
+          <div class = "swiper-slide"
           v-for = "banner in banners"
           :key="banner.id">
             <img :src = "banner.imageUrl" :alt = "banner.id">
@@ -17,9 +17,9 @@
 </template>
 
 <script>
- import Swiper from 'swiper'; 
+import Swiper from 'swiper'
 //  引入swiper的样式
- import 'swiper/dist/css/swiper.min.css'
+import 'swiper/dist/css/swiper.min.css'
 export default {
   data () {
     return {
@@ -30,13 +30,12 @@ export default {
     this.$http.getbanner().then(resp => {
       // console.log(resp.data,resp.data.banners)
       this.banners = resp.data.banners
-        this.$nextTick().then(()=> {
-          new Swiper ('.swiper-container',{
-            // Optional parameters
-            loop: true,
-            autoplay: true,
-            // If we need pagination
-            pagination: {
+      this.$nextTick().then(() => {
+        /* eslint-disable no-new */
+        new Swiper('.swiper-container', {
+          loop: true,
+          autoplay: true,
+          pagination: {
             el: '.swiper-pagination',
             clickable: 'true'
           }

@@ -7,10 +7,10 @@ module.exports = {
         ws: true,
         changeOrigin: true
       }
+    },
+    overlay:{
+      warnings:true,
+      errors:true
     }
-    // overlay:{
-    //   warnings:true,
-    //   errors:true
-    // }
   }
 }

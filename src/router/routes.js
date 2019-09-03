@@ -8,6 +8,8 @@ const Optimization = () => import('@/views/Optimization')
 const Cart = () => import('@/views/Cart')
 const Mine = () => import('@/views/Mine')
 const List = () => import('@/views/List')
+const Detail = () => import('@/views/Detail')
+const Login = () => import('@/views/Login')
 export default [
   {
     path: '/',
@@ -43,7 +45,7 @@ export default [
       {
         path: ':cateId',
         name: 'cateList',
-        component : List
+        component: List
       }
     ]
   },
@@ -70,7 +72,8 @@ export default [
     meta: {
       istabbar: true,
       title: '购物车',
-      icon: '&#xe605;'
+      icon: '&#xe605;',
+      isAuthRequired: true
     }
   },
   {
@@ -85,5 +88,20 @@ export default [
       title: '我的',
       icon: '&#xe61a;'
     }
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    components: {
+      default: Detail,
+      footer: gomeFooter
+    },
+    meta: {}
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {}
   }
 ]

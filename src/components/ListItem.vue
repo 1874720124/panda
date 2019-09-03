@@ -1,23 +1,26 @@
 <template>
-  <div class="gome-list-item">
+  <router-link
+  class="gome-list-item"
+  tag="div"
+  :to="{path:'/detail', query:{id}}">
     <div class="gome-list-item-img">
-      <img src="//img.alicdn.com/bao/uploaded/i1/3786032144/O1CN01PDVLho1RhzgWcghTS_!!3786032144.jpg" alt="">
+      <img :src="image" alt="">
     </div>
     <div class="gome-list-item-info">
       <p class="gome-list-item-info-title">
-          秋季男休闲裤子潮流宽松情侣小脚九分哈伦裤男士9分运动束脚长裤</p>
+          {{title}}</p>
       <p class="gome-list-item-info-other">
-        <span class="gome-list-item-info-price">￥128.00</span>
+        <span class="gome-list-item-info-price">￥{{price|tofixed2}}</span>
         <span class="gome-list-item-info-people">180人已买</span>
       </p>
        <button class="list-item-addcarBtn">加入购物车</button>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-
+  props: ['image', 'title', 'price', 'id']
 }
 </script>
 

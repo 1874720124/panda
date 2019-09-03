@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="gome-category">
     <ul class="gome-category-aside">
       <router-link
@@ -22,12 +22,11 @@ export default {
     }
   },
   created () {
+    // console.log(this.$route, this.$router)
     this.$http.gettabs().then(resp => {
       this.tabs = resp.data.list.slice(1)
-      console.log(this.tabs)
-      console.log(this.$route)
-      const {cateId = this.tabs[0].id} = this.$route.params
-      this.$router.push(`category/${cateId}`)
+      const { cateId = this.tabs[0].id } = this.$route.params
+      this.$router.push(`/category/${cateId}`)
     })
   }
 }
@@ -38,11 +37,12 @@ export default {
     height:100%;
     display:flex;
     &-aside{
+       height:100%;
+      overflow: auto;
       display:flex;
       flex-direction: column;
       justify-content:space-around;
       width:80px;
-      height:100%;
       background:#eeeeee;
       overflow: auto;
     &-item{
@@ -55,8 +55,10 @@ export default {
     }
     }
     &-content{
+      height: 100%;
       flex:1;
       overflow-x: hidden;
+      overflow-y: auto;
     }
   }
  .router-link-exact-active,
